@@ -1,4 +1,4 @@
-package za.ac.cput.contoller;
+package za.ac.cput.controller;
 
 public class employeeController {
 }

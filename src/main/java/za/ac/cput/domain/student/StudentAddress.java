@@ -2,12 +2,22 @@ package za.ac.cput.domain.student;
 
 import za.ac.cput.domain.Address;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
+@Entity
 public class StudentAddress
 {
-    private String studentId;
-    private Address address; //Address is a class
+    @NotNull @Id  private String studentId;
+    @NotNull private Address address; //Address is a class
+
+    protected StudentAddress()
+    {
+
+    }
 
     private StudentAddress(Builder builder)
     {
