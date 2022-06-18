@@ -1,18 +1,28 @@
 package za.ac.cput.domain.student;
+/*
+ * name: Taariq Khan
+ * student number: 219231141
+ *
+ *
+ *
+ *
+ * */
 
 import za.ac.cput.domain.Address;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
 public class StudentAddress
 {
-    @NotNull @Id  private String studentId;
-    @NotNull private Address address; //Address is a class
+    @NotNull
+    @Id
+    private String studentId;
+    @NotNull
+    @Embedded
+    public Address address; //Address is a class
 
     protected StudentAddress()
     {
@@ -24,52 +34,17 @@ public class StudentAddress
         this.studentId = builder.studentId;
         this.address = builder.address;
     }
+
     public String getStudentId()
     {
         return studentId;
     }
+
     public Address getAddress()
     {
         return address;
     }
 
-
-    /*public static class StudentAddressId //immutable class
-    {
-        private String studentId;
-        private Address address;
-
-        public StudentAddressId(String studentId, Address address)
-        {
-            this.studentId = studentId;
-            this.address = address;
-        }
-
-        public String getStudentId()
-        {
-            return studentId;
-        }
-
-        public Address getAddress()
-        {
-            return address;
-        }
-
-        @Override
-        public boolean equals(Object o)
-        {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            StudentAddressId that = (StudentAddressId) o;
-            return studentId.equals(that.studentId) && address.equals(that.address);
-        }
-
-        @Override
-        public int hashCode()
-        {
-            return Objects.hash(studentId, address);
-        }
-    }*/
 
     @Override
     public String toString()
@@ -90,11 +65,13 @@ public class StudentAddress
             this.studentId = studentId;
             return this;
         }
+
         public Builder setAddress(Address address)
         {
             this.address = address;
             return this;
         }
+
         public Builder copy(StudentAddress studentAddress)
         {
             this.studentId = studentAddress.studentId;

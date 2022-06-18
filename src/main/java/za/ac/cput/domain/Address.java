@@ -1,11 +1,9 @@
 package za.ac.cput.domain;
 
-import za.ac.cput.domain.student.StudentAddress;
-
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
 @NotNull
 public class Address
 {
@@ -17,7 +15,7 @@ public class Address
     private int postalCode;
     //private City city;//City is a class
 
-    private Address(Address.Builder builder)
+    private Address(Builder builder)
     {
         this.unitNumber = builder.unitNumber;
         this.complexName = builder.complexName;
@@ -101,37 +99,37 @@ public class Address
         private String streetName;
         private int postalCode;
 
-        public Address.Builder unitNumber(String unitNumber)
+        public Builder setUnitNumber(String unitNumber)
         {
             this.unitNumber = unitNumber;
             return this;
         }
 
-        public Address.Builder complexName(String complexName)
+        public Builder setComplexName(String complexName)
         {
             this.complexName = complexName;
             return this;
         }
 
-        public Address.Builder streetNumber(String streetNumber)
+        public Builder setStreetNumber(String streetNumber)
         {
             this.streetNumber = streetNumber;
             return this;
         }
 
-        public Address.Builder streetName(String streetName)
+        public Builder setStreetName(String streetName)
         {
             this.streetName = streetName;
             return this;
         }
 
-        public Address.Builder postalCode(int postalCode)
+        public Builder setPostalCode(int postalCode)
         {
             this.postalCode = postalCode;
             return this;
         }
 
-        public Address.Builder copy(Address Address)
+        public Builder copy(Address Address)
         {
             this.unitNumber = unitNumber;
             this.complexName = complexName;

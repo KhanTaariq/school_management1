@@ -1,4 +1,12 @@
 package za.ac.cput.service.student.Impl;
+/*
+ * name: Taariq Khan
+ * student number: 219231141
+ *
+ *
+ *
+ *
+ * */
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +22,8 @@ public class StudentAddressServiceImpl implements StudentAddressService
 {
     private final StudentAddressRepository repository;
 
-    @Autowired public StudentAddressServiceImpl(StudentAddressRepository repository)
+    @Autowired
+    public StudentAddressServiceImpl(StudentAddressRepository repository)
     {
         this.repository = repository;
     }
@@ -46,7 +55,7 @@ public class StudentAddressServiceImpl implements StudentAddressService
     @Override
     public void deleteById(String s)
     {
-        Optional<StudentAddress>  studentAddress = read(s);
-        if(studentAddress.isPresent()) delete(studentAddress.get());
+        Optional<StudentAddress> studentAddress = read(s);
+        if (studentAddress.isPresent()) delete(studentAddress.get());
     }
 }
