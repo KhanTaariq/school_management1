@@ -1,4 +1,4 @@
-package za.ac.cput.student.Service;
+package za.ac.cput.student.service;
 /*
  * name: Taariq Khan
  * student number: 219231141
