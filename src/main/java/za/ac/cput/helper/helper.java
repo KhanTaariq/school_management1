@@ -1,4 +1,4 @@
-package za.ac.cput.Helper;
+package za.ac.cput.helper;
 
 import org.apache.commons.lang3.StringUtils;
 
